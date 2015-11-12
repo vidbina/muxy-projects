@@ -1,7 +1,7 @@
 cd $BASE
 # NODEENV_DIR="/Volumes/supr-tosh/nodeenv-vigour"
-NODEENV_DIR="/Users/david/Documents/Development/vigour.io/env"
-ANDROID_HOME="/Volumes/spare/android-sdk-macosx"
+export NODEENV_DIR="/Users/david/Documents/Development/vigour.io/env"
+export ANDROID_HOME="/Volumes/spare/android-sdk-macosx"
 
 tmux start-server
 
@@ -38,7 +38,7 @@ if [[ -d /Volumes/supr-tosh ]]; then
   tmux send-keys -t $SESSION:5 "  source $BASE/setup-android-home.sh" C-m
   tmux send-keys -t $SESSION:5 "  cd $BASE/vigour-native/templates/android" C-m
   tmux split-window -h -t $SESSION:5
-  tmux send-keys -t $SESSION:5 "  source $NODEENV_DIR/bin/activate/android" C-m
+  tmux send-keys -t $SESSION:5 "  source $NODEENV_DIR/bin/activate" C-m
   tmux send-keys -t $SESSION:5 "  source $BASE/setup-android-home.sh" C-m
   tmux send-keys -t $SESSION:5 "  cd $BASE/vigour-native" C-m
 else
