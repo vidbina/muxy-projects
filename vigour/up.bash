@@ -13,6 +13,7 @@ if [[ -d /Volumes/supr-tosh ]]; then
   tmux new-window -t $SESSION:10 -n 💓
   tmux send-keys -t $SESSION:10 "  while true; do cd $BASE; ls; date +%H%M%S; sleep 10; cd ..; done" C-m
 
+
   tmux send-keys -t $SESSION:0 "  source $NODEENV_DIR/bin/activate" C-m
   tmux send-keys -t $SESSION:0 "  cd $BASE" C-m
   tmux split-window -h -t $SESSION:0
@@ -26,21 +27,21 @@ if [[ -d /Volumes/supr-tosh ]]; then
   tmux send-keys -t $SESSION:1 "  source $NODEENV_DIR/bin/activate" C-m
   tmux send-keys -t $SESSION:1 "  cd $BASE/gaston" C-m
 
-  tmux new-window -t $SESSION:2 -n vigour-native
+  tmux new-window -t $SESSION:2 -n vigour-wrapper
   tmux send-keys -t $SESSION:2 "  source $NODEENV_DIR/bin/activate" C-m
-  tmux send-keys -t $SESSION:2 "  cd $BASE/vigour-native" C-m
+  tmux send-keys -t $SESSION:2 "  cd $BASE/vigour-wrapper" C-m
   tmux split-window -h -t $SESSION:2
   tmux send-keys -t $SESSION:2 "  source $NODEENV_DIR/bin/activate" C-m
-  tmux send-keys -t $SESSION:2 "  cd $BASE/vigour-native" C-m
+  tmux send-keys -t $SESSION:2 "  cd $BASE/vigour-wrapper" C-m
 
   tmux new-window -t $SESSION:5 -n android
   tmux send-keys -t $SESSION:5 "  source $NODEENV_DIR/bin/activate" C-m
   tmux send-keys -t $SESSION:5 "  source $BASE/setup-android-home.sh" C-m
-  tmux send-keys -t $SESSION:5 "  cd $BASE/vigour-native/templates/android" C-m
+  tmux send-keys -t $SESSION:5 "  cd $BASE/vigour-wrapper/templates/android" C-m
   tmux split-window -h -t $SESSION:5
   tmux send-keys -t $SESSION:5 "  source $NODEENV_DIR/bin/activate" C-m
   tmux send-keys -t $SESSION:5 "  source $BASE/setup-android-home.sh" C-m
-  tmux send-keys -t $SESSION:5 "  cd $BASE/vigour-native" C-m
+  tmux send-keys -t $SESSION:5 "  cd $BASE/vigour-wrapper" C-m
 else
   echo "supr-tosh not connected, connect drive and try again"
 fi
