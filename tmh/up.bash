@@ -1,8 +1,7 @@
 cd $BASE
 
 export AWS_DEFAULT_PROFILE=tmh
-export TEMPORARY="$(brew --prefix nvm)/nvm.sh"
-source $(brew --prefix nvm)/nvm.sh
+export SESSION_STARTUP_SCRIPT="/Users/david/Documents/Development/TMH/startup.zsh"
 
 tmux start-server
 
